@@ -1,0 +1,94 @@
+# ═══════════════════════════════════════════════════════════════
+# guardIA — raíz del monorepo
+# ═══════════════════════════════════════════════════════════════
+
+# ─── Secretos (NUNCA commitear) ──────────────────────────────────
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+secrets/
+
+# ─── Python ──────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ─── ML artifacts (grandes, regenerables, o no redistribuibles) ─
+# Corpus crudo (licencia PAN no permite redistribución), parquets
+# intermedios, checkpoints de entrenamiento, exports ONNX.
+ml/data/
+
+# Modelo copiado al bundle de la extensión: se distribuye aparte
+# (Drive o Release), no vía git — son >100 MB binarios.
+extension/public/model/
+*.onnx
+*.safetensors
+*.ckpt
+*.pt
+*.pb
+
+# ─── Node / JavaScript / TypeScript ──────────────────────────────
+node_modules/
+dist/
+build/
+out/
+.next/
+.turbo/
+.svelte-kit/
+*.tsbuildinfo
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.log
+
+# ─── Editor / IDE ────────────────────────────────────────────────
+.vscode/*
+!.vscode/settings.json.example
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-*
+
+# ─── OS ──────────────────────────────────────────────────────────
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ─── Logs y temporales ───────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.bak
+*.tmp
+.cache/
+
+# ─── Coverage / tests ────────────────────────────────────────────
+coverage/
+.nyc_output/
+htmlcov/
+
+# ─── Bundle intermedio del pipeline de Colab ────────────────────
+# Si decides usar Colab alguna vez: el zip que se sube a Drive
+guardia-ml.zip

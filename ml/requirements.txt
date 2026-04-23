@@ -1,0 +1,15 @@
+transformers>=4.44,<5
+datasets>=2.21
+torch>=2.2
+accelerate>=0.33
+evaluate>=0.4
+scikit-learn>=1.4
+sentencepiece>=0.2
+sacremoses>=0.1
+optimum[onnxruntime]>=1.21
+onnxruntime>=1.19
+onnx>=1.16
+tqdm
+pandas
+numpy<2
+lxml
